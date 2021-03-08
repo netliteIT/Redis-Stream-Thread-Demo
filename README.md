@@ -3,9 +3,15 @@
 ## Config
 Crea il file __init__.py da __init__.py.example con le credenziali e i dettagli dell'host Redis
 ```python
+import redis
+
 host = '<host>'
-port = <port>
+port = 5002
+user = 'default'
 password = '<password>'
+
+#pool = redis.ConnectionPool(host=host, port=port, password=password, decode_responses=True)
+pool = redis.ConnectionPool(host=host, port=port, connection_class=redis.SSLConnection, password=password, decode_responses=True)
 ```
 
 ## Esecuzione
