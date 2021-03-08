@@ -1,0 +1,7 @@
+import redis
+
+host = '<host>'
+port = <port>
+password = '<password>'
+
+pool = redis.ConnectionPool(host=host, port=port, password=password, decode_responses=True)
